@@ -21,10 +21,9 @@ var solution = function(isBadVersion) {
         let left = 1;
         let right = n;
         let firstBadVersion = n;
-        let middle = left + Math.floor((right - left) / 2)
+        let middle = Math.floor((right + left) / 2)
 
         while (left <= right) {
-            let middle = Math.floor((right + left) / 2);
 
             if (isBadVersion(middle)) {
                 right = middle - 1;
@@ -33,7 +32,7 @@ var solution = function(isBadVersion) {
             } else {
                 left = middle + 1;
             }
-            middle = left + Math.floor((right - left) / 2)
+            middle = Math.floor((right + left) / 2)
         }
         return firstBadVersion;
     };
