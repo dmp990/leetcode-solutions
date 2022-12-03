@@ -24,6 +24,7 @@ var solution = function(isBadVersion) {
         let middle = left + Math.floor((right + left) / 2)
 
         while (left <= right) {
+            let middle = Math.floor((right + left) / 2);
 
             if (isBadVersion(middle)) {
                 right = middle - 1;
