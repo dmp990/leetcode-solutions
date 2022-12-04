@@ -5,12 +5,15 @@
  */
 var isSubsequence = function(s, t) {
     let ptr = 0;
-    for (let i = 0 ; i < t.length; i++) {
+    for (let i = 0; i < t.length; i++) {
         if (t[i] == s[ptr]) {
             ptr++;
         }
+        if (ptr === s.length) {
+            return true;
+        }
     }
-    if (ptr == s.length) {
+    if (!t.length && !s.length) {
         return true;
     }
     return false;
