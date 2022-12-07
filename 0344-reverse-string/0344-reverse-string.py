@@ -3,5 +3,10 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        for i in range(len(s) // 2):
-            s[i], s[len(s) - 1 - i] = s[len(s) - 1 - i], s[i]
+        leftPtr = 0
+        rightPtr = len(s) - 1
+        
+        while leftPtr < rightPtr:
+            s[leftPtr], s[rightPtr] = s[rightPtr], s[leftPtr]
+            leftPtr += 1
+            rightPtr -= 1
